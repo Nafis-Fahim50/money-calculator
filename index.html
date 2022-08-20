@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwind css  -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Money Calculator</title>
 </head>
-<body>
-    
+<body class="mb-12">
+    <header>
+        <h3 class="text-3xl font-medium text-center mt-6">Money Calculate</h3>
+    </header>
+
+    <main class="container grid grid-cols-2 mx-auto mt-6">
+        <section>
+            <div>
+                <img src="images/money-master.png" alt="">
+            </div>
+        </section>
+
+        <section class="bg-slate-50">
+            <div class="text-center">
+                <div>
+                    <h3 class="mb-2 font-medium m-12">Income</h3>
+                    <h4 class=" mb-2">Income: <input type="text"></h4>
+                </div>
+                <div>
+                    <h3 class="font-medium my-6">Expense</h3>
+                    <h4 class="mb-4">Food    : <input type="text"></h4>
+                    <h4 class="mb-4">Rent    : <input type="text"></h4>
+                    <h4 class="mb-4">Clothes : <input type="text"></h4>
+                    <button class="bg-blue-600 px-4 py-2 font-medium rounded-lg text-white hover:bg-blue-800">Calculate</button>
+
+                    <h3 class="mt-6 font-medium">Total Expense: BDT <span>00</span></h3>
+                    <h3 class="font-medium">Current Balance: BDT <span>00</span></h3>
+                </div>
+                <div class="mb-6">
+                    <h3 class="m-6">Save: <input type="text"> % <button class="bg-blue-600 px-4 py-2 font-medium rounded-lg text-white hover:bg-blue-800">Save</button></h3>
+                    <h3 class="font-medium">Saving Amount: </h3>
+                    <h3 class="font-medium">Remaining Balance: </h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center mt-6">
+        <small>Develop by @Nafis-Fahim</small>
+    </footer>
+
+    <!-- link JS file  -->
+    <script src="JS/app.js"></script>
 </body>
 </html>

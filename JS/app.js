@@ -1,30 +1,42 @@
+function getElementValueById(elementId){
+    const elementField = document.getElementById(elementId);
+    const elementStringValue = elementField.value;
+    const elementValue = parseInt(elementStringValue);
+    return elementValue;
+}
+
+function setElementValueById(elementId,newValue){
+    const calculateField = document.getElementById(elementId);
+    calculateField.innerText = newValue;
+
+}
+
 document.getElementById('btn-calculate').addEventListener('click',function(){
+    const foodCost = getElementValueById('food-value');
+    const rentCost = getElementValueById('rent-value');
+    const clothesCost = getElementValueById('clothes-value');
+
+    const totalCost = foodCost + rentCost + clothesCost;
+
+    setElementValueById('total-expense',totalCost);
+
+    const totalMoney = getElementValueById('income-value');
+    const currentMoney = totalMoney - totalCost;
+
+    setElementValueById('current-total',currentMoney);
     
-    const incomeField = document.getElementById('income-value');
-    const incomeString = incomeField.value;
-    const income = parseInt(incomeString);
-    
-    const foodField = document.getElementById('food-value');
-    const foodCostString = foodField.value;
-    const foodCost = parseInt(foodCostString);
+})
+document.getElementById('btn-save').addEventListener('click',function(){
+    const saveInput = getElementValueById('save-field');
+    const incomeValue = getElementValueById('income-value');
 
-    const rentField = document.getElementById('rent-value');
-    const rentCostString = rentField.value;
-    const rentCost = parseInt(rentCostString);
+    const totalSave = incomeValue * (saveInput/100);
+    setElementValueById('total-save',totalSave);
 
-    const clothesField = document.getElementById('clothes-value');
-    const clothesCostString = clothesField.value;
-    const clothesCost = parseInt(clothesCostString);
+    const currentMoneyField = document.getElementById('current-total');
+    const currentMoneyString = currentMoneyField.innerText;
+    const currentMoney = parseInt(currentMoneyString);
 
-    const totalExpenseField = document.getElementById('total-expense');
-    const totalExpenseSting = foodCost + rentCost + clothesCost;
-    const totalExpense = parseInt(totalExpenseSting);
-    totalExpenseField.innerText = totalExpense;
-
-    const currentTotalField = document.getElementById('current-total');
-    const currentTotalString = income - totalExpense;
-    const currentTotal = parseInt(currentTotalString);
-
-    currentTotalField.innerText = currentTotal;
-    
+    const finalAmount = currentMoney - totalSave;
+    setElementValueById('final-money',finalAmount);
 })
